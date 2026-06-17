@@ -1,0 +1,23 @@
+# Dépendances
+node_modules/
+
+# Build de production (régénéré par `npm run build`)
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Variables d'environnement locales
+.env
+.env.*
+*.local
+
+# Éditeurs / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Réglages locaux Claude Code (personnels, non versionnés)
+.claude/settings.local.json
