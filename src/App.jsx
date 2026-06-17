@@ -23,6 +23,8 @@ export default function App() {
         <Route path="/simulateur" element={<Simulateur />} />
         <Route path="/chargement" element={<Chargement />} />
         <Route path="/resultats" element={<Resultats />} />
+        {/* Alias partageable : le lien nav « Comparaison » mène ici (libellé = URL = contenu) */}
+        <Route path="/comparaison" element={<Resultats />} />
         <Route path="/erreur" element={<Erreur />} />
         <Route path="/a-propos" element={<APropos />} />
         <Route path="*" element={<Landing />} />

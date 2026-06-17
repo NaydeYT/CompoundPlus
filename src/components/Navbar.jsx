@@ -64,7 +64,7 @@ export default function Navbar({ heroOverlay = false }) {
         <nav id="primary-nav" className={"nav-links" + (open ? " open" : "")} onClick={() => setOpen(false)}>
           <NavLink to="/" end className={linkClass}>Accueil</NavLink>
           <NavLink to="/simulateur" className={linkClass}>Simulateur</NavLink>
-          <NavLink to="/resultats" className={linkClass}>Comparaison</NavLink>
+          <NavLink to="/comparaison" className={linkClass}>Comparaison</NavLink>
         </nav>
       </div>
     </header>
