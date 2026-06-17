@@ -29,10 +29,12 @@ export function saveParams(params) {
   } catch { /* stockage indisponible : la simulation reste fonctionnelle */ }
 }
 
-/* Valeur future avec versements mensuels, capitalisation mensuelle. */
+/* Valeur future avec versements mensuels, capitalisation mensuelle.
+   Le taux mensuel est le taux ÉQUIVALENT au taux annuel : (1+r)^12 = 1+annuel.
+   On évite ainsi de gonfler le rendement effectif (annuel/12 donnerait 7,23 % pour 7 %). */
 export function futureValue(initial, monthly, annualRatePct, years) {
   const months = Math.round(years * 12);
-  const r = annualRatePct / 100 / 12;
+  const r = Math.pow(1 + annualRatePct / 100, 1 / 12) - 1;
   if (r === 0) return initial + monthly * months;
   const growth = Math.pow(1 + r, months);
   return initial * growth + monthly * ((growth - 1) / r);
